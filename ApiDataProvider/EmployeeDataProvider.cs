@@ -11,7 +11,7 @@ using TestTask1.Infrastructure.Exceptions;
 
 namespace TestTask1.ApiDataProvider
 {
-    public class EmployeeDataProvider : IApiDataProvider
+    public class EmployeeDataProvider : IEmployeeDataProvider
     {
         private readonly ApiDbContext _dbContext;
         private readonly ILogger<EmployeeDataProvider> _logger;

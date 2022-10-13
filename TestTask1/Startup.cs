@@ -32,7 +32,7 @@ namespace TestTask1
            // добавляем Sqlite БД
             services.AddDbContext<ApiDbContext>(oa => oa.UseSqlite("Data source=AppDb.sqlite;"), ServiceLifetime.Singleton);
             // добавляем провайдер данных сотрудников
-            services.AddSingleton<IApiDataProvider, EmployeeDataProvider>();
+            services.AddSingleton<IEmployeeDataProvider, EmployeeDataProvider>();
 
         }
 

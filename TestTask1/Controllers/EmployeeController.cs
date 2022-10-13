@@ -12,9 +12,9 @@ namespace TestTask1.Controllers
     public class EmployeeController : Controller
     {
         private readonly ILogger<EmployeeController> _logger;
-        private readonly IApiDataProvider _dataProvider;
+        private readonly IEmployeeDataProvider _dataProvider;
 
-        public EmployeeController(ILogger<EmployeeController> logger, IApiDataProvider dataProvider)
+        public EmployeeController(ILogger<EmployeeController> logger, IEmployeeDataProvider dataProvider)
         {
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
             _dataProvider = dataProvider ?? throw new ArgumentNullException(nameof(dataProvider));

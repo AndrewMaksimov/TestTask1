@@ -4,7 +4,7 @@ using TestTask1.Infrastructure.Models;
 
 namespace TestTask1.ApiDataProvider
 {
-    public interface IApiDataProvider
+    public interface IEmployeeDataProvider
     {
         /// <summary>
         /// Получение сотрудника по его ID 
