@@ -12,12 +12,9 @@ namespace TestTask1
 {
     public class Startup
     {
-        public Startup()
+        public Startup(IConfiguration configuration)
         {
-            var builder = new ConfigurationBuilder()
-                .AddJsonFile("appsettings.json", optional: true, reloadOnChange: false);
-            var cfg = builder.Build();
-            Configuration = cfg;
+            Configuration = configuration;
         }
 
         public IConfiguration Configuration { get; }
