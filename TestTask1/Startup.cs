@@ -12,9 +12,12 @@ namespace TestTask1
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
+        public Startup()
         {
-            Configuration = configuration;
+            var builder = new ConfigurationBuilder()
+                .AddJsonFile("appsettings.json", optional: true, reloadOnChange: false);
+            var cfg = builder.Build();
+            Configuration = cfg;
         }
 
         public IConfiguration Configuration { get; }
@@ -30,7 +33,7 @@ namespace TestTask1
             });
 
            // добавляем Sqlite БД
-            services.AddDbContext<ApiDbContext>(oa => oa.UseSqlite("Data source=AppDb.sqlite;"), ServiceLifetime.Singleton);
+            services.AddDbContext<ApiDbContext>(oa => oa.UseSqlite(Configuration["ConnectionStrings:SqliteConnectionString"]), ServiceLifetime.Singleton);
             // добавляем провайдер данных сотрудников
             services.AddSingleton<IEmployeeDataProvider, EmployeeDataProvider>();
 
