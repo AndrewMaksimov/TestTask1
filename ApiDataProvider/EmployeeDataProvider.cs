@@ -46,7 +46,7 @@ namespace TestTask1.ApiDataProvider
             }
             catch(Exception ex)
             {
-                _logger.LogError(ex, $"Ошибка при создании пользователя с параметрами: Name={name}, Post={post}");
+                _logger.LogError(ex, $"Ошибка при создании сотрудника с параметрами: Name={name}, Post={post}");
 
                 return -1;
             }
