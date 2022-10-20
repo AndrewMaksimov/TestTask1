@@ -15,6 +15,7 @@ namespace TestTask1.ApiDb
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            // задаём уникальность для столбца Name (ФИО)
             modelBuilder.Entity<Employee>()
                 .HasIndex(e => e.Name)
                 .IsUnique();
